@@ -20,7 +20,7 @@ public class OpenAPITest {
 	String code = "11B20201";	
 	
 	//날씨 예보 API를 테스트하는 메소드
-	@Test
+//	@Test
 	public String getWeather() throws IOException {
 		StringBuilder urlBuilder = new StringBuilder("http://apis.data.go.kr/1360000/VilageFcstMsgService/getLandFcst"); /*URL*/
         urlBuilder.append("?" + URLEncoder.encode("serviceKey","UTF-8") + "=" + serviceKey); /*Service Key*/
@@ -74,5 +74,7 @@ public class OpenAPITest {
 
 		// 결과 메세지만 추출
 		System.out.println(root.response.header.resultMsg);
+		
+		System.out.println(root.response.body.dataType);
 	}
 }
